@@ -148,6 +148,15 @@ func (k Keeper) IterateLastValidatorPowers(ctx context.Context, handler func(ope
 // get the group of the bonded validators
 func (k Keeper) GetLastValidators(ctx context.Context) (validators []types.Validator, err error) {
 	maxValidators, err := k.MaxValidators(ctx)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
+	println("maxValidators: ", maxValidators)
 	if err != nil {
 		return nil, err
 	}
@@ -155,6 +164,15 @@ func (k Keeper) GetLastValidators(ctx context.Context) (validators []types.Valid
 	validators = make([]types.Validator, 0, maxValidators)
 	err = k.IterateLastValidatorPowers(ctx, func(operator []byte, power int64) (stop bool, err error) {
 		validators = append(validators, k.mustGetValidator(ctx, operator))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
+		println("validators1111111: ", len(validators))
 		// sanity check
 		if len(validators) > int(maxValidators) {
 			panic("more validators than maxValidators found")
